@@ -84,3 +84,23 @@ AddEventHandler('ox_inventory:usedItem', function(playerId, name, slotId, metada
     end
     player.state:set("bloodPressure",{systolic = bloodPressure.systolicc,diastolic = bloodPressure.diastolic}) 
 end)
+
+lib.addCommand('quitBloodPressure', {
+    help = 'Return blood Pressure to normal',
+    params = {
+        {
+            name = 'target',
+            type = 'playerId',
+            help = 'Target player\'s server id',
+        }
+    },
+    restricted = 'group.admin'
+}, function(source, args, raw)
+    if args.target then
+            local  bloodPressure = {
+            systolic = Config.systolic,
+            diastolic = Config.diastolic
+        }
+        Player(args.target).state:set("bloodPressure",bloodPressure,true)
+    end
+end)

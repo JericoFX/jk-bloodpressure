@@ -59,10 +59,10 @@ end)
 -- Use any event here, i use OX because is more easy to do but you can use any event from any inventory
 AddEventHandler('ox_inventory:usedItem', function(playerId, name, slotId, metadata)
     -- Verifica si el ítem afecta la presión
-    local isHigh = Config.hiItems[name] or false
-    local isLow = Config.lowItems[name] or false
+    local isHigh = Config.hiItems[name] or 0
+    local isLow = Config.lowItems[name] or 0
 
-    if not isHigh and not isLow then return end
+    if  isHigh == 0 and isLow == 0 then return end
 
     local player = Player(playerId)
     local bloodPressure = player.state.?bloodPressure

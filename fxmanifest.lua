@@ -3,7 +3,7 @@ game("gta5")
 author "JericoFX"
 description("JK-BloodPressure")
 version("1.0.0")
-client_script("config/cl_init.lua","client/init.lua")
+client_script("client/init.lua")
 shared_script "@ox_lib/init.lua"
 server_scripts({
     "config/sv_init.lua",

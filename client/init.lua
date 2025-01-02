@@ -23,7 +23,7 @@ local function hyperTensionEffectStart()
         SetPedMotionBlur(cache.ped, true)
         Wait(math.random(1500,3000))
         SetPedMotionBlur(cache.ped, false)
-        riggerScreenblurFadeOut(1000.0)
+        TriggerScreenblurFadeOut(1000.0)
        
     end)
     startRepeatingCallback("ragdoll",math.random(2000,5000),function() 
